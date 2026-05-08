@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond The Technical</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { heading: ['Outfit'], body: ['DM Sans'] },
+          colors: {
+            brand: { orange: '#F97316', red: '#EF4444', dark: '#1E293B', light: '#F8FAFC' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .grad-accent { background: linear-gradient(135deg, #F97316, #EF4444); }
+    .grad-text { background: linear-gradient(135deg, #F97316, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-fade { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+    .anim-d1 { animation-delay: 0.1s; }
+    .anim-d2 { animation-delay: 0.2s; }
+    .anim-d3 { animation-delay: 0.3s; }
+    .anim-d4 { animation-delay: 0.4s; }
+    .btn-primary { background: linear-gradient(135deg, #F97316, #EF4444); transition: all 0.3s; box-shadow: 0 4px 20px rgba(249,115,22,0.3); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(249,115,22,0.4); }
+    .card-hover { transition: all 0.3s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .toast-show { animation: fadeUp 0.4s ease forwards; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full overflow-auto bg-[#FAFBFC] font-body text-brand-dark">
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="font-heading font-bold text-xl">Beyond<span class="grad-text">The</span>Technical</span> <button onclick="scrollToForm()" class="btn-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold" id="nav-cta">Apply Now</button>
+   </div>
+  </nav><!-- Hero -->
+  <section class="pt-32 pb-20 px-6">
+   <div class="max-w-4xl mx-auto text-center">
+    <h1 id="hero-headline" class="font-heading font-extrabold text-4xl md:text-6xl leading-tight anim-fade anim-d1">You Have the Skills. But Nobody's Calling Back.</h1>
+    <p id="hero-sub" class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto anim-fade anim-d2">You can build. You can debug. But when it comes to getting hired, getting promoted, and standing out—something's missing. You're not alone. Most technical graduates feel exactly like this.</p><button onclick="scrollToForm()" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold mt-10 anim-fade anim-d3" id="hero-cta">Start Your Transformation</button>
+    <p id="urgency-text" class="mt-4 text-sm text-red-500 font-medium anim-fade anim-d4"><i data-lucide="clock" class="inline w-4 h-4 mr-1"></i>Limited seats available – Next diploma starting soon</p>
+   </div>
+  </section><!-- Application Form -->
+  <section id="apply-form" class="py-20 px-6 bg-white"><!-- Problem -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Why Most Developers <span class="grad-text">Feel Stuck</span></h2>
+     <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex items-start gap-4 p-5 rounded-2xl bg-red-50/50 card-hover"><i data-lucide="mic-off" class="w-6 h-6 text-orange-500 shrink-0 mt-1"></i>
+       <p class="text-gray-700">You freeze in interviews. Your mind goes blank when asked to explain your work or your ideas. You know the answer, but the words don't come.</p>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl bg-red-50/50 card-hover"><i data-lucide="trending-down" class="w-6 h-6 text-orange-500 shrink-0 mt-1"></i>
+       <p class="text-gray-700">You don't speak the language of decision-makers. They talk about impact, strategy, and ROI. You talk about systems and algorithms. The gap costs you opportunities and money.</p>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl bg-red-50/50 card-hover"><i data-lucide="users" class="w-6 h-6 text-orange-500 shrink-0 mt-1"></i>
+       <p class="text-gray-700">You're one of thousands with the same resume. Same bootcamp. Same technical stack. Nothing makes you different. No reason for them to choose you.</p>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl bg-red-50/50 card-hover"><i data-lucide="lightbulb-off" class="w-6 h-6 text-orange-500 shrink-0 mt-1"></i>
+       <p class="text-gray-700">You execute tasks. You solve what you're told to solve. But you can't think beyond the requirements. AI can do that now. You're starting to worry.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- This Is For You -->
+   <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">This Is <span class="grad-text">For You</span> If You're Ready to Change</h2>
+     <div class="grid md:grid-cols-2 gap-5">
+      <div class="flex items-center gap-3 p-5 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 shrink-0"></i>
+       <p>You're tired of feeling like you're just getting by</p>
+      </div>
+      <div class="flex items-center gap-3 p-5 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 shrink-0"></i>
+       <p>You want a real career, not just job hunting</p>
+      </div>
+      <div class="flex items-center gap-3 p-5 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 shrink-0"></i>
+       <p>You're ready to think bigger than just the code</p>
+      </div>
+      <div class="flex items-center gap-3 p-5 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 shrink-0"></i>
+       <p>You want to be the person in the room that stands out</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Solution -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">This Is Your <span class="grad-text">Turning Point</span></h2>
+     <p class="text-gray-500 mb-12">Three core skills that transform you from "one of many" to "the one they want to hire"</p>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 card-hover">
+       <div class="w-14 h-14 grad-accent rounded-2xl flex items-center justify-center mx-auto mb-5"><i data-lucide="briefcase" class="w-7 h-7 text-white"></i>
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-3">Business Fundamentals &amp; Entrepreneurship</h3>
+       <p class="text-gray-600 text-sm">Learn how real businesses actually work. Understand what drives decisions, what gets funded, and why some ideas succeed while others fail. When you understand the "why" behind projects, you become someone people can't ignore. You think like a leader now.</p>
+      </div>
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 card-hover">
+       <div class="w-14 h-14 grad-accent rounded-2xl flex items-center justify-center mx-auto mb-5"><i data-lucide="lightbulb" class="w-7 h-7 text-white"></i>
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-3">Creative Thinking</h3>
+       <p class="text-gray-600 text-sm">Stop just executing tasks. Learn to see problems from different angles and imagine better solutions. This is what separates leaders from people who follow orders. This is what AI can't replace. This is what companies desperately need.</p>
+      </div>
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 card-hover">
+       <div class="w-14 h-14 grad-accent rounded-2xl flex items-center justify-center mx-auto mb-5"><i data-lucide="presentation" class="w-7 h-7 text-white"></i>
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-3">Communication &amp; Presentation Skills</h3>
+       <p class="text-gray-600 text-sm">Learn to explain complex things simply. Show up in interviews confident. Lead meetings. Get your ideas heard. People who communicate well get opportunities. People who don't, get overlooked. It's that simple.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Transformation -->
+   <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl mb-12">The Person You'll <span class="grad-text">Become</span></h2>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="mic" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="font-semibold text-sm">Speaks With Confidence</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="target" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="font-semibold text-sm">Thinks Strategically</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="zap" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="font-semibold text-sm">Solves Like a Leader</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm card-hover"><i data-lucide="rocket" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="font-semibold text-sm">Gets the Job. Gets Promoted.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Why Choose Us -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl mb-12">Why Choose <span class="grad-text">Us</span></h2>
+     <div class="grid md:grid-cols-3 gap-5 text-left">
+      <div class="flex items-start gap-3 p-4"><i data-lucide="hammer" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">Real, Not Theory</p>
+        <p class="text-xs text-gray-500 mt-1">You build actual projects</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-3 p-4"><i data-lucide="heart-handshake" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">Mentors Who Care</p>
+        <p class="text-xs text-gray-500 mt-1">People who've been where you are</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-3 p-4"><i data-lucide="compass" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">Career Path Clear</p>
+        <p class="text-xs text-gray-500 mt-1">Built to get you hired faster</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-3 p-4"><i data-lucide="messages-square" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">You're Engaged</p>
+        <p class="text-xs text-gray-500 mt-1">Not just watching videos</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-3 p-4"><i data-lucide="calendar" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">Schedules That Fit</p>
+        <p class="text-xs text-gray-500 mt-1">Your life, your pace</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-3 p-4"><i data-lucide="award" class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"></i>
+       <div>
+        <p class="font-semibold text-sm">A Diploma Worth Having</p>
+        <p class="text-xs text-gray-500 mt-1">Companies actually recognize</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Curriculum -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-4">Your 3-Month <span class="grad-text">Learning Path</span></h2>
+     <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Each month builds on the previous. Each skill compounds. By the end, you won't recognize yourself.</p>
+     <div class="grid md:grid-cols-3 gap-6 mb-8"><!-- Month 1 -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 card-hover">
+       <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
+        1
+       </div>
+       <h3 class="font-heading font-bold text-2xl mb-2 text-brand-dark">Business Fundamentals</h3>
+       <p class="text-sm text-gray-600 mb-6">Think like a founder. Understand the business world.</p>
+       <ul class="space-y-3">
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>How Businesses Work</strong> – Revenue, costs, profit, growth</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Product Strategy</strong> – What makes people buy, user needs, market fit</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Entrepreneurship Basics</strong> – How to turn an idea into reality</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Decision Making</strong> – How leaders think and analyze problems</span></li>
+       </ul>
+      </div><!-- Month 2 -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 card-hover">
+       <div class="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
+        2
+       </div>
+       <h3 class="font-heading font-bold text-2xl mb-2 text-brand-dark">Communication &amp; Presentation</h3>
+       <p class="text-sm text-gray-600 mb-6">Speak with clarity. Influence with confidence.</p>
+       <ul class="space-y-3">
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Public Speaking</strong> – Overcome nervousness, speak clearly</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Storytelling</strong> – Make your ideas memorable and compelling</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Presentation Design</strong> – Show, don't tell. Slide design that works</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Interview Mastery</strong> – Answer tough questions with confidence</span></li>
+       </ul>
+      </div><!-- Month 3 -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 card-hover">
+       <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
+        3
+       </div>
+       <h3 class="font-heading font-bold text-2xl mb-2 text-brand-dark">Creativity &amp; Innovation</h3>
+       <p class="text-sm text-gray-600 mb-6">Think beyond requirements. Build the future.</p>
+       <ul class="space-y-3">
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Design Thinking</strong> – Solve problems like a creative leader</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Innovation Process</strong> – How to ideate, test, and iterate</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Problem Solving</strong> – Look at problems from all angles</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Leadership Mindset</strong> – What separates leaders from followers</span></li>
+       </ul>
+      </div>
+     </div><!-- Capstone Project -->
+     <div class="p-10 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300">
+      <div class="flex items-start gap-4">
+       <div class="w-14 h-14 grad-accent rounded-2xl flex items-center justify-center shrink-0"><i data-lucide="target" class="w-7 h-7 text-white"></i>
+       </div>
+       <div class="flex-1">
+        <h3 class="font-heading font-bold text-2xl mb-2 text-brand-dark">Capstone Project: Real-World Application</h3>
+        <p class="text-gray-700 mb-4">In your final week, you'll bring it all together. You'll take a real business problem and solve it using everything you learned.</p>
+        <div class="grid md:grid-cols-3 gap-4">
+         <div class="p-4 bg-white rounded-xl">
+          <p class="font-semibold text-sm mb-2 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-orange-500"></i>Analyze</p>
+          <p class="text-xs text-gray-600">Apply business fundamentals to understand the problem deeply</p>
+         </div>
+         <div class="p-4 bg-white rounded-xl">
+          <p class="font-semibold text-sm mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-orange-500"></i>Create</p>
+          <p class="text-xs text-gray-600">Use creative thinking to design an innovative solution</p>
+         </div>
+         <div class="p-4 bg-white rounded-xl">
+          <p class="font-semibold text-sm mb-2 flex items-center gap-2"><i data-lucide="presentation" class="w-4 h-4 text-orange-500"></i>Present</p>
+          <p class="text-xs text-gray-600">Pitch your solution with the confidence of a leader</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Program Details -->
+   <section class="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Program <span class="grad-text">Details</span></h2>
+     <div class="grid md:grid-cols-5 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow-md text-center card-hover">
+       <i data-lucide="calendar" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="text-sm text-gray-600 mb-2">Start Date</p>
+       <p class="font-heading font-bold text-lg text-brand-dark">15 July 2026</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md text-center card-hover">
+       <i data-lucide="calendar" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="text-sm text-gray-600 mb-2">End Date</p>
+       <p class="font-heading font-bold text-lg text-brand-dark">15 October 2026</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md text-center card-hover">
+       <i data-lucide="clock" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="text-sm text-gray-600 mb-2">Schedule</p>
+       <p class="font-heading font-bold text-lg text-brand-dark">3 Sessions/Week</p>
+       <p class="text-xs text-gray-500 mt-1">3 hours each</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md text-center card-hover">
+       <i data-lucide="zap" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="text-sm text-gray-600 mb-2">Total Hours</p>
+       <p class="font-heading font-bold text-lg text-brand-dark">108 Hours</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md text-center card-hover border-2 border-orange-200">
+       <i data-lucide="award" class="w-8 h-8 text-orange-500 mx-auto mb-3"></i>
+       <p class="text-sm text-gray-600 mb-2">Certificate</p>
+       <p class="font-heading font-bold text-lg text-brand-dark">Professional</p>
+       <p class="text-xs text-orange-600 font-semibold mt-1">Recognized</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pricing -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Investment in Your <span class="grad-text">Future</span></h2>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Regular Price -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 card-hover">
+       <p class="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wide">Standard Price</p>
+       <div class="mb-6"><span class="font-heading font-bold text-5xl text-brand-dark">5,000</span> <span class="text-gray-600 ml-2">EGY</span>
+       </div>
+       <p class="text-gray-600 text-sm mb-6">Full price for professionals and career changers</p>
+       <ul class="space-y-3 mb-8">
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Complete diploma program</li>
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Live mentorship sessions</li>
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Career guidance &amp; support</li>
+       </ul>
+      </div><!-- Student Discount Price -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 card-hover relative overflow-hidden">
+       <div class="absolute -top-3 -right-3 bg-gradient-to-br from-orange-400 to-red-500 text-white px-4 py-1 rounded-full text-xs font-bold transform rotate-12">
+        SAVE 30%
+       </div>
+       <p class="text-orange-600 text-sm font-semibold mb-4 uppercase tracking-wide flex items-center gap-2"><i data-lucide="student" class="w-4 h-4"></i>University Students</p>
+       <div class="mb-2">
+        <p class="text-gray-500 text-sm mb-2">With valid student ID</p><span class="font-heading font-bold text-5xl grad-text">3,500</span> <span class="text-gray-600 ml-2">EGY</span>
+       </div>
+       <p class="text-gray-600 text-xs mb-2 line-through">Was 5,000 EGY</p>
+       <p class="text-green-600 text-sm font-semibold mb-6">You save 1,500 EGY</p>
+       <ul class="space-y-3 mb-6">
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Everything in standard plan</li>
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> 30% exclusive student discount</li>
+        <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Flexible payment options</li>
+       </ul>
+       <div class="p-4 bg-white rounded-2xl border border-green-200">
+        <p class="text-green-700 text-xs font-semibold mb-2 flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4"></i>Payment Plans Available</p>
+        <p class="text-green-900 font-semibold text-sm">3 interest-free installments</p>
+        <p class="text-green-700 text-sm mt-1"><strong>1,167 EGY per month</strong></p>
+       </div>
+      </div>
+     </div>
+     <div class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="p-6 bg-blue-50 border border-blue-200 rounded-2xl">
+       <p class="text-blue-900 text-sm"><span class="font-semibold">Student Verification:</span> Simply present your valid university student ID during enrollment to unlock the 30% discount. No hidden requirements.</p>
+      </div>
+      <div class="p-6 bg-green-50 border border-green-200 rounded-2xl">
+       <p class="text-green-900 text-sm"><span class="font-semibold">Flexible Payment:</span> Students can split the discounted price into 3 equal installments with zero interest. <strong>1,167 EGY per month</strong> – no extra fees.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- FAQ -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+     <h2 id="faq-title" class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Frequently Asked <span class="grad-text">Questions</span></h2>
+     <div class="space-y-4">
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Is this program for complete beginners?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>No. This program assumes you already have technical skills—you've completed a bootcamp, degree, or have solid work experience. We focus on the soft skills and business thinking that technical people often lack, not on teaching you to code.</p>
+       </div>
+      </div><!-- FAQ 2 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Can I do this while working full-time?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>Yes. The program is specifically designed for working professionals. You have 3 sessions per week at scheduled times (evening slots available), so you can balance work and learning. Many students complete it without taking time off.</p>
+       </div>
+      </div><!-- FAQ 3 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What if I can't attend every session?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>All sessions are recorded. If you miss a live session, you can watch the recording and catch up. We ask that you attend at least 80% live to stay engaged with the mentors and your Round.</p>
+       </div>
+      </div><!-- FAQ 3 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What if I can't attend every session?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>All sessions are recorded. If you miss a live session, you can watch the recording and catch up. We ask that you attend at least 80% live to stay engaged with the mentors and your Round.</p>
+       </div>
+      </div><!-- FAQ 4 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Will this help me get a job or promotion?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>It directly supports both. The communication and presentation skills help you interview better. The business fundamentals and creative thinking help you stand out once you're hired. Our career guidance mentors also work with you on resumes and interview prep.</p>
+       </div>
+      </div><!-- FAQ 5 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Is the diploma recognized by employers?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>Yes. Our diploma is recognized by leading tech companies and startups in the region. It shows you've gone beyond just technical skills—you understand business and can communicate. Many employers view it as proof of well-rounded growth.</p>
+       </div>
+      </div><!-- FAQ 6 -->
+      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What's included in the payment plan?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
+       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
+        <p>All students (on the full price or student discount) can split payments into 3 installments with zero interest. The first payment is due upon enrollment, then two equal payments over the next two months. No hidden fees, ever.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Final CTA Section -->
+   <div class="max-w-lg mx-auto text-center">
+    <h2 id="final-cta-title" class="font-heading font-bold text-3xl md:text-4xl mb-3">Your <span class="grad-text">Next Chapter</span> Starts Here</h2>
+    <p class="text-gray-500 mb-8">Apply in less than 2 minutes</p><button id="submit-btn" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg">Secure Your Spot</button>
+    <div id="toast" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-medium toast-show"></div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="py-8 px-6 text-center text-gray-400 text-sm border-t border-gray-100">
+   <p>© 2026 Beyond The Technical. All rights reserved.</p>
+  </footer>
+  <script>
+  // Element SDK
+  const defaultConfig = {
+    hero_headline: "You Have the Skills. But Nobody's Calling Back.",
+    hero_subheadline: "You can build. You can debug. But when it comes to getting hired, getting promoted, and standing out—something's missing. You're not alone. Most technical graduates feel exactly like this.",
+    urgency_text: "Limited seats available – Next round starting soon",
+    cta_button_text: "Start Your Transformation",
+    final_cta_title: "Your Next Chapter Starts Here",
+    testimonials_title: "What Students Are Saying",
+    faq_title: "Frequently Asked Questions",
+    background_color: "#FAFBFC",
+    surface_color: "#FFFFFF",
+    text_color: "#1E293B",
+    primary_action_color: "#F97316",
+    secondary_action_color: "#EF4444",
+    font_family: "Outfit",
+    font_size: 16
+  };
+
+  function applyConfig(config) {
+    const c = { ...defaultConfig, ...config };
+    document.getElementById('hero-headline').textContent = c.hero_headline;
+    document.getElementById('hero-sub').textContent = c.hero_subheadline;
+    document.getElementById('urgency-text').innerHTML = `<i data-lucide="clock" class="inline w-4 h-4 mr-1"></i>${c.urgency_text}`;
+    document.getElementById('hero-cta').textContent = c.cta_button_text;
+    document.getElementById('nav-cta').textContent = c.cta_button_text;
+    document.getElementById('final-cta-title').innerHTML = c.final_cta_title.replace('Beyond the Technical', '<span class="grad-text">Beyond the Technical</span>');
+    document.getElementById('faq-title').innerHTML = c.faq_title.replace('Questions', '<span class="grad-text">Questions</span>');
+    
+    document.body.style.backgroundColor = c.background_color;
+    document.body.style.color = c.text_color;
+    document.body.style.fontFamily = `${c.font_family}, DM Sans, sans-serif`;
+    
+    document.querySelectorAll('.font-heading').forEach(el => { el.style.fontFamily = `${c.font_family}, Outfit, sans-serif`; });
+    
+    const baseSize = c.font_size;
+    document.querySelectorAll('h1').forEach(el => { el.style.fontSize = ''; });
+    document.querySelectorAll('p, li').forEach(el => { el.style.fontSize = `${baseSize}px`; });
+    
+    lucide.createIcons();
+  }
+
+  window.elementSdk.init({
+    defaultConfig,
+    onConfigChange: async (config) => { applyConfig(config); },
+    mapToCapabilities: (config) => ({
+      recolorables: [
+        { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+        { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+        { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+        { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: (v) => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
+        { get: () => config.secondary_action_color || defaultConfig.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } }
+      ],
+      borderables: [],
+      fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+      fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+    }),
+    mapToEditPanelValues: (config) => new Map([
+      ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+      ["hero_subheadline", config.hero_subheadline || defaultConfig.hero_subheadline],
+      ["urgency_text", config.urgency_text || defaultConfig.urgency_text],
+      ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text],
+      ["final_cta_title", config.final_cta_title || defaultConfig.final_cta_title],
+      ["faq_title", config.faq_title || defaultConfig.faq_title],
+      ["final_heading", config.final_heading || defaultConfig.final_heading]
+    ])
+  });
+
+  // Data SDK
+  const dataHandler = { onDataChanged(data) {} };
+  window.dataSdk.init(dataHandler);
+
+  // Button click - opens Google Form
+  document.getElementById('submit-btn').addEventListener('click', () => {
+    window.open('https://forms.gle/qW947z1UAn7UcxsR7', '_blank');
+  });
+
+  function scrollToForm() {
+    document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // FAQ Toggle Functionality
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      const content = faqItem.querySelector('.faq-content');
+      const icon = this.querySelector('[data-lucide="chevron-down"]');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.querySelector('.faq-content').classList.add('hidden');
+          item.querySelector('[data-lucide="chevron-down"]').style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      // Toggle current FAQ
+      content.classList.toggle('hidden');
+      icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
+
+  lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f8318db31007940',t:'MTc3ODE4NzAyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

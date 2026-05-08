@@ -462,9 +462,9 @@
   // Data SDK
   const dataHandler = { onDataChanged(data) {} };
   window.dataSdk.init(dataHandler);
-//Button click
- document.getElementById('Secure Your Spot-btn').addEventListener('click', () => {
-  window.open('https://forms.gle/P7zZu5E7hGcCFW9DA', '_blank');
+// تشغيل الأزرار
+document.querySelectorAll('button').forEach(btn => {
+    btn.onclick = () => window.open('https://forms.gle/DnUBhHPQDkBNX1iQ7', '_blank');
 });
   function scrollToForm() {
     document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });

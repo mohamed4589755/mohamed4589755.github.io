@@ -462,12 +462,10 @@
   // Data SDK
   const dataHandler = { onDataChanged(data) {} };
   window.dataSdk.init(dataHandler);
-
-  // Button click - opens Google Form
-  document.getElementById('submit-btn').addEventListener('click', () => {
-    window.open('https://forms.gle/qW947z1UAn7UcxsR7', '_blank');
-  });
-
+//Button click
+ document.getElementById('submit-btn').addEventListener('click', () => {
+  window.open('https://forms.gle/MxYURy2KgpEqo74r9', '_blank');
+});
   function scrollToForm() {
     document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });
   }

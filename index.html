@@ -354,12 +354,6 @@
        <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
         <p>All sessions are recorded. If you miss a live session, you can watch the recording and catch up. We ask that you attend at least 80% live to stay engaged with the mentors and your Round.</p>
        </div>
-      </div><!-- FAQ 3 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What if I can't attend every session?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>All sessions are recorded. If you miss a live session, you can watch the recording and catch up. We ask that you attend at least 80% live to stay engaged with the mentors and your Round.</p>
-       </div>
       </div><!-- FAQ 4 -->
       <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
        <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Will this help me get a job or promotion?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
@@ -384,7 +378,11 @@
    </section><!-- Final CTA Section -->
    <div class="max-w-lg mx-auto text-center">
     <h2 id="final-cta-title" class="font-heading font-bold text-3xl md:text-4xl mb-3">Your <span class="grad-text">Next Chapter</span> Starts Here</h2>
-    <p class="text-gray-500 mb-8">Apply in less than 2 minutes</p><button id="submit-btn" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg">Secure Your Spot</button>
+    <p class="text-gray-500 mb-8">Apply in less than 2 minutes</p>
+    
+    <!-- التعديل هنا: إضافة الأمر للزر مباشرة -->
+    <button id="submit-btn" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg" onclick="window.open('https://forms.gle/A6FVf8t1gLcqkDFGA', '_blank')">Secure Your Spot</button>
+    
     <div id="toast" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-medium toast-show"></div>
    </div>
   </section><!-- Footer -->
@@ -462,10 +460,8 @@
   // Data SDK
   const dataHandler = { onDataChanged(data) {} };
   window.dataSdk.init(dataHandler);
-// تشغيل الأزرار
-document.querySelectorAll('button').forEach(btn => {
-    btn.onclick = () => window.open('https://forms.gle/DnUBhHPQDkBNX1iQ7', '_blank');
-});
+
+  // Scroll functionality for the top buttons
   function scrollToForm() {
     document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });
   }
@@ -492,6 +488,6 @@ document.querySelectorAll('button').forEach(btn => {
   });
 
   lucide.createIcons();
-</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f8318db31007940',t:'MTc3ODE4NzAyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </script>
+ </body>
 </html>

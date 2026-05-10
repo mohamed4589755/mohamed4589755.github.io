@@ -36,25 +36,27 @@
     .card-hover { transition: all 0.3s; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
     .toast-show { animation: fadeUp 0.4s ease forwards; }
+    
+    /* إخفاء السهم الافتراضي بتاع الأسئلة */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
   </style>
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full overflow-auto bg-[#FAFBFC] font-body text-brand-dark">
-  <!-- Nav -->
   <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-heading font-bold text-xl">Beyond<span class="grad-text">The</span>Technical</span> <button onclick="scrollToForm()" class="btn-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold" id="nav-cta">Apply Now</button>
+    <span class="font-heading font-bold text-xl">Beyond<span class="grad-text">The</span>Technical</span> 
+    <button onclick="scrollToForm()" class="btn-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold" id="nav-cta">Apply Now</button>
    </div>
-  </nav><!-- Hero -->
-  <section class="pt-32 pb-20 px-6">
+  </nav><section class="pt-32 pb-20 px-6">
    <div class="max-w-4xl mx-auto text-center">
     <h1 id="hero-headline" class="font-heading font-extrabold text-4xl md:text-6xl leading-tight anim-fade anim-d1">You Have the Skills. But Nobody's Calling Back.</h1>
-    <p id="hero-sub" class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto anim-fade anim-d2">You can build. You can debug. But when it comes to getting hired, getting promoted, and standing out—something's missing. You're not alone. Most technical graduates feel exactly like this.</p><button onclick="scrollToForm()" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold mt-10 anim-fade anim-d3" id="hero-cta">Start Your Transformation</button>
+    <p id="hero-sub" class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto anim-fade anim-d2">You can build. You can debug. But when it comes to getting hired, getting promoted, and standing out—something's missing. You're not alone. Most technical graduates feel exactly like this.</p>
+    <button onclick="scrollToForm()" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold mt-10 anim-fade anim-d3" id="hero-cta">Start Your Transformation</button>
     <p id="urgency-text" class="mt-4 text-sm text-red-500 font-medium anim-fade anim-d4"><i data-lucide="clock" class="inline w-4 h-4 mr-1"></i>Limited seats available – Next diploma starting soon</p>
    </div>
-  </section><!-- Application Form -->
-  <section id="apply-form" class="py-20 px-6 bg-white"><!-- Problem -->
-   <section class="py-20 px-6 bg-white">
+  </section><section id="apply-form" class="py-20 px-6 bg-white"><section class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Why Most Developers <span class="grad-text">Feel Stuck</span></h2>
      <div class="grid md:grid-cols-2 gap-6">
@@ -72,8 +74,7 @@
       </div>
      </div>
     </div>
-   </section><!-- This Is For You -->
-   <section class="py-20 px-6">
+   </section><section class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">This Is <span class="grad-text">For You</span> If You're Ready to Change</h2>
      <div class="grid md:grid-cols-2 gap-5">
@@ -91,8 +92,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Solution -->
-   <section class="py-20 px-6 bg-white">
+   </section><section class="py-20 px-6 bg-white">
     <div class="max-w-5xl mx-auto text-center">
      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">This Is Your <span class="grad-text">Turning Point</span></h2>
      <p class="text-gray-500 mb-12">Three core skills that transform you from "one of many" to "the one they want to hire"</p>
@@ -117,8 +117,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Transformation -->
-   <section class="py-20 px-6">
+   </section><section class="py-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-12">The Person You'll <span class="grad-text">Become</span></h2>
      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -136,8 +135,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Why Choose Us -->
-   <section class="py-20 px-6 bg-white">
+   </section><section class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto text-center">
      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-12">Why Choose <span class="grad-text">Us</span></h2>
      <div class="grid md:grid-cols-3 gap-5 text-left">
@@ -179,13 +177,11 @@
       </div>
      </div>
     </div>
-   </section><!-- Curriculum -->
-   <section class="py-20 px-6 bg-white">
+   </section><section class="py-20 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-4">Your 3-Month <span class="grad-text">Learning Path</span></h2>
      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Each month builds on the previous. Each skill compounds. By the end, you won't recognize yourself.</p>
-     <div class="grid md:grid-cols-3 gap-6 mb-8"><!-- Month 1 -->
-      <div class="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 card-hover">
+     <div class="grid md:grid-cols-3 gap-6 mb-8"><div class="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 card-hover">
        <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
         1
        </div>
@@ -197,8 +193,7 @@
         <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Entrepreneurship Basics</strong> – How to turn an idea into reality</span></li>
         <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Decision Making</strong> – How leaders think and analyze problems</span></li>
        </ul>
-      </div><!-- Month 2 -->
-      <div class="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 card-hover">
+      </div><div class="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 card-hover">
        <div class="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
         2
        </div>
@@ -210,8 +205,7 @@
         <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Presentation Design</strong> – Show, don't tell. Slide design that works</span></li>
         <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Interview Mastery</strong> – Answer tough questions with confidence</span></li>
        </ul>
-      </div><!-- Month 3 -->
-      <div class="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 card-hover">
+      </div><div class="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 card-hover">
        <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl mb-4">
         3
        </div>
@@ -224,8 +218,7 @@
         <li class="flex items-start gap-3"><i data-lucide="play" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i> <span class="text-sm text-gray-700"><strong>Leadership Mindset</strong> – What separates leaders from followers</span></li>
        </ul>
       </div>
-     </div><!-- Capstone Project -->
-     <div class="p-10 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300">
+     </div><div class="p-10 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300">
       <div class="flex items-start gap-4">
        <div class="w-14 h-14 grad-accent rounded-2xl flex items-center justify-center shrink-0"><i data-lucide="target" class="w-7 h-7 text-white"></i>
        </div>
@@ -250,8 +243,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Program Details -->
-   <section class="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-50">
+   </section><section class="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-50">
     <div class="max-w-5xl mx-auto">
      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Program <span class="grad-text">Details</span></h2>
      <div class="grid md:grid-cols-5 gap-6">
@@ -284,12 +276,10 @@
       </div>
      </div>
     </div>
-   </section><!-- Pricing -->
-   <section class="py-20 px-6 bg-white">
+   </section><section class="py-20 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Investment in Your <span class="grad-text">Future</span></h2>
-     <div class="grid md:grid-cols-2 gap-8"><!-- Regular Price -->
-      <div class="p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 card-hover">
+     <div class="grid md:grid-cols-2 gap-8"><div class="p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 card-hover">
        <p class="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wide">Standard Price</p>
        <div class="mb-6"><span class="font-heading font-bold text-5xl text-brand-dark">5,000</span> <span class="text-gray-600 ml-2">EGY</span>
        </div>
@@ -299,8 +289,7 @@
         <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Live mentorship sessions</li>
         <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Career guidance &amp; support</li>
        </ul>
-      </div><!-- Student Discount Price -->
-      <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 card-hover relative overflow-hidden">
+      </div><div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 card-hover relative overflow-hidden">
        <div class="absolute -top-3 -right-3 bg-gradient-to-br from-orange-400 to-red-500 text-white px-4 py-1 rounded-full text-xs font-bold transform rotate-12">
         SAVE 30%
        </div>
@@ -331,66 +320,89 @@
       </div>
      </div>
     </div>
-   </section><!-- FAQ -->
-   <section class="py-20 px-6 bg-white">
+   </section><section class="py-20 px-6 bg-white">
     <div class="max-w-3xl mx-auto">
      <h2 id="faq-title" class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Frequently Asked <span class="grad-text">Questions</span></h2>
      <div class="space-y-4">
-      <!-- FAQ 1 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Is this program for complete beginners?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>No. This program assumes you already have technical skills—you've completed a bootcamp, degree, or have solid work experience. We focus on the soft skills and business thinking that technical people often lack, not on teaching you to code.</p>
+      
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>Is this program for complete beginners?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>Yes! This program is designed for complete beginners. We start from the fundamentals and guide you step-by-step, so no prior experience is required.</p>
        </div>
-      </div><!-- FAQ 2 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Can I do this while working full-time?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>Yes. The program is specifically designed for working professionals. You have 3 sessions per week at scheduled times (evening slots available), so you can balance work and learning. Many students complete it without taking time off.</p>
+      </details>
+
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>Can I do this while working full-time?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>Absolutely. The program is structured to be flexible and practical, with sessions and materials that fit around your schedule.</p>
        </div>
-      </div><!-- FAQ 3 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What if I can't attend every session?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>All sessions are recorded. If you miss a live session, you can watch the recording and catch up. We ask that you attend at least 80% live to stay engaged with the mentors and your Round.</p>
+      </details>
+
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>What if I can't attend every session?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>No problem. All live sessions are recorded and shared with you, so you can catch up anytime. You'll also have access to all materials and assignments.</p>
        </div>
-      </div><!-- FAQ 4 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Will this help me get a job or promotion?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>It directly supports both. The communication and presentation skills help you interview better. The business fundamentals and creative thinking help you stand out once you're hired. Our career guidance mentors also work with you on resumes and interview prep.</p>
+      </details>
+
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>Will this help me get a job or promotion?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>Yes. You'll build in-demand skills, complete real-world projects, and receive career support to help you stand out and reach your goals.</p>
        </div>
-      </div><!-- FAQ 5 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>Is the diploma recognized by employers?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>Yes. Our diploma is recognized by leading tech companies and startups in the region. It shows you've gone beyond just technical skills—you understand business and can communicate. Many employers view it as proof of well-rounded growth.</p>
+      </details>
+
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>Is the diploma recognized by employers?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>Yes. Upon completion, you will receive a diploma that is recognized by our industry partners and respected by employers.</p>
        </div>
-      </div><!-- FAQ 6 -->
-      <div class="faq-item bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
-       <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"> <span>What's included in the payment plan?</span> <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform"></i> </button>
-       <div class="faq-content hidden px-6 pb-5 text-gray-600 text-sm">
-        <p>All students (on the full price or student discount) can split payments into 3 installments with zero interest. The first payment is due upon enrollment, then two equal payments over the next two months. No hidden fees, ever.</p>
+      </details>
+
+      <details class="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden card-hover">
+       <summary class="w-full px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer"> 
+           <span>What's included in the payment plan?</span> 
+           <i data-lucide="chevron-down" class="w-5 h-5 text-orange-500 transition-transform duration-300 group-open:rotate-180"></i> 
+       </summary>
+       <div class="px-6 pb-5 text-gray-600 text-sm">
+        <p>The payment plan includes full access to all live classes, recorded sessions, course materials, projects, feedback, career support, and your final diploma.</p>
        </div>
-      </div>
+      </details>
+
      </div>
     </div>
-   </section><!-- Final CTA Section -->
-   <div class="max-w-lg mx-auto text-center">
+   </section><div class="max-w-lg mx-auto text-center">
     <h2 id="final-cta-title" class="font-heading font-bold text-3xl md:text-4xl mb-3">Your <span class="grad-text">Next Chapter</span> Starts Here</h2>
     <p class="text-gray-500 mb-8">Apply in less than 2 minutes</p>
     
-    <!-- التعديل هنا: إضافة الأمر للزر مباشرة -->
-    <button id="submit-btn" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg" onclick="window.open('https://forms.gle/A6FVf8t1gLcqkDFGA', '_blank')">Secure Your Spot</button>
+    <a href="https://forms.gle/A6FVf8t1gLcqkDFGA" target="_blank" class="block w-full">
+        <button class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg">Secure Your Spot</button>
+    </a>
     
     <div id="toast" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-medium toast-show"></div>
    </div>
-  </section><!-- Footer -->
-  <footer class="py-8 px-6 text-center text-gray-400 text-sm border-t border-gray-100">
+  </section><footer class="py-8 px-6 text-center text-gray-400 text-sm border-t border-gray-100">
    <p>© 2026 Beyond The Technical. All rights reserved.</p>
   </footer>
+
   <script>
-  // Element SDK
+  // Element SDK Initialization
   const defaultConfig = {
     hero_headline: "You Have the Skills. But Nobody's Calling Back.",
     hero_subheadline: "You can build. You can debug. But when it comes to getting hired, getting promoted, and standing out—something's missing. You're not alone. Most technical graduates feel exactly like this.",
@@ -413,10 +425,6 @@
     document.getElementById('hero-headline').textContent = c.hero_headline;
     document.getElementById('hero-sub').textContent = c.hero_subheadline;
     document.getElementById('urgency-text').innerHTML = `<i data-lucide="clock" class="inline w-4 h-4 mr-1"></i>${c.urgency_text}`;
-    document.getElementById('hero-cta').textContent = c.cta_button_text;
-    document.getElementById('nav-cta').textContent = c.cta_button_text;
-    document.getElementById('final-cta-title').innerHTML = c.final_cta_title.replace('Beyond the Technical', '<span class="grad-text">Beyond the Technical</span>');
-    document.getElementById('faq-title').innerHTML = c.faq_title.replace('Questions', '<span class="grad-text">Questions</span>');
     
     document.body.style.backgroundColor = c.background_color;
     document.body.style.color = c.text_color;
@@ -461,32 +469,15 @@
   const dataHandler = { onDataChanged(data) {} };
   window.dataSdk.init(dataHandler);
 
-  // Scroll functionality for the top buttons
+  // دالة النزول لتحت (للزراير اللي فوق فقط)
   function scrollToForm() {
-    document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById('apply-form');
+    if(section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
-  // FAQ Toggle Functionality
-  document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', function() {
-      const faqItem = this.parentElement;
-      const content = faqItem.querySelector('.faq-content');
-      const icon = this.querySelector('[data-lucide="chevron-down"]');
-      
-      // Close all other FAQs
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-          item.querySelector('.faq-content').classList.add('hidden');
-          item.querySelector('[data-lucide="chevron-down"]').style.transform = 'rotate(0deg)';
-        }
-      });
-      
-      // Toggle current FAQ
-      content.classList.toggle('hidden');
-      icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-    });
-  });
-
+  // تشغيل الأيقونات
   lucide.createIcons();
   </script>
  </body>
